@@ -8,9 +8,18 @@ const {
   deleteBook,
 } = require("../controllers/ControllerBook");
 
-router.post("/add", addBook);
+const auth = require("../middleware/authMiddleware");
+
+// CREATE book (protected)
+router.post("/add", auth, addBook);
+
+// READ books (public)
 router.get("/", getBooks);
-router.put("/:id", updateBook);
-router.delete("/:id", deleteBook);
+
+// UPDATE book (protected)
+router.put("/:id", auth, updateBook);
+
+// DELETE book (protected)
+router.delete("/:id", auth, deleteBook);
 
 module.exports = router;

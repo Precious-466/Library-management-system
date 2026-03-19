@@ -12,6 +12,10 @@ const bookSchema = new mongoose.Schema({
   year: {
     type: Number,
   },
+  available: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 module.exports = mongoose.model("Book", bookSchema);
