@@ -31,4 +31,4 @@ app.use("/api/auth", authRoutes);
 
 const borrowRoutes = require("./routes/borrowRoutes");
 
-app.use("/api", borrowRoutes);
+app.use("/api/borrow", borrowRoutes);
